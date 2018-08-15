@@ -115,7 +115,9 @@
 
 
   //卡车分期
-  var carAcurrentgrandtotal = [1542,224,652,1554,]
+  var carAcurrentgrandtotal = [1542,224,652,1554,3150,1729,1536];
+  var carBgrandtotalaccum = [57,9,27,60,120,69,56];  //时间
+  var carCtime = ['1月','2月','3月','4月','5月','6月','7月'];  //时间
 
 
 
@@ -275,7 +277,7 @@
 
 
   //卡车分期配置
-  optionC = {
+  optionF = {
     backgroundColor:'#fff',
     color : ['#ff7f50','#87cefa', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
      tooltip: {
@@ -303,7 +305,7 @@
     xAxis: [
         {
             type: 'category',
-            data: hytCtime,
+            data: carCtime,
             axisPointer: {
                 type: 'shadow'
             }
@@ -312,7 +314,7 @@
     yAxis: [
         {
           type: 'value',
-          name: '金额(百万元)',
+          name: '金额(万元)',
           min: 0,
           max: 250,
           offset:0,
@@ -336,14 +338,14 @@
             name:'放款金额',
             type:'bar',
             // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
-            data:hytAcurrentgrandtotal
+            data:carAcurrentgrandtotal
         },
         {
             name:'放款笔数',
             type:'bar',
             yAxisIndex: 1,
             // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
-            data:hytBgrandtotalaccum
+            data:carBgrandtotalaccum
         },
     ]
   };
@@ -353,6 +355,7 @@
    // myChartB.setOption(optionB);
     myChartB.setOption(optionB);
     myChartC.setOption(optionC);
+    myChartF.setOption(optionF);
  };
 </script>
 
@@ -364,10 +367,6 @@
     });
 
     function show_num1(n, ele) {
-      sum = parseInt(Math.random() * 1000000 + 1);
-      sum2 = parseInt(Math.random() * 1000 + 1);
-      sum3 = parseInt(Math.random() * 1000 + 1);
-      sum4 = parseInt(Math.random() * 1000 + 1);
       var $ele = $(ele);
       var it = $ele.find('i');
       var len = String(n).length;
@@ -400,15 +399,7 @@
           show_num1(ccJson.authen, '.totalnum-b');
           show_num1(ccJson.registernum, '.totalnum-c');
           show_num1(ccJson.authenAll, '.totalnum-d');
-          ccJson.typeRatio_1 = 200;
-          ccJson.typeRatio_2 = 400;
-          ccJson.typeRatio_3 = 100;
-          ccJson.typeRatio_4 = 600;
-          ccJson.typeRatio_5 = 700;
-          ccJson.typeRatio_6 = 4000;
-          ccJson.typeRatio_7 = 800;
-          ccJson.typeRatio_8 = 40;
-          ccJson.typeRatio_9 = 90;
+
           var pieData = [{
               name: '车主',
               value: ccJson.typeRatio_1
