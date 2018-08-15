@@ -584,7 +584,7 @@
               // console.log(data);
               var Data = data.result;
               var ff_mount = Data.listTollApplyAmount.joinKey('sums');
-              $("#ff_mount").html((ff_mount[ff_mount.length-1]/10000).toFixed(2)+'万元')
+              $("#ff_mount").html((ff_mount[ff_mount.length-1]/10000).toFixed(2)+'万元');
               var optionD = {
                 backgroundColor: '#fff',
                 tooltip: {
@@ -604,7 +604,7 @@
                 xAxis: {
                   type: 'category',
                   boundaryGap: false,
-                  data: Data.listTollApplyAmount.joinKey('time'),
+                  data: Data.listTollApplyAmount.joinKey('time').removeAt(Data.listTollApplyAmount.joinKey('time').length-1,1),
                   axisLabel: {
                     formatter: function (p) {
                       return parseInt(p.split('-')[1]) + '月'
@@ -623,23 +623,24 @@
                 series: [{
                     name: '累计发放',
                     type: 'line',
-                    data: Data.listTollApplyAmount.joinKey('sums')
+                    data: Data.listTollApplyAmount.joinKey('sums').removeAt(Data.listTollApplyAmount.joinKey('sums').length-1)
                   },
                   {
                     name: '累计还款',
                     type: 'line',
-                    data: Data.listTollRepaymentAmount.joinKey('sums')
+                    data: Data.listTollRepaymentAmount.joinKey('sums').removeAt(Data.listTollRepaymentAmount.joinKey('sums').length-1)
                   }
                 ]
               };
               drawChart('iwb-d', optionD);
               var tx_Data = Data.listTollCount.joinKey('counts');
               $("#tx_count").html(tx_Data[tx_Data.length - 1]);
+              var e_timeData = Data.listCardCount.joinKey('time');
               var optionE = {
                 backgroundColor: '#fff',
                 xAxis: {
                   type: 'category',
-                  data: Data.listCardCount.joinKey('time'),
+                  data: e_timeData.removeAt(e_timeData.length-1),
                   axisLabel: {
                     formatter: function (p) {
                       return parseInt(p.split('-')[1]) + '月'
@@ -660,6 +661,10 @@
                 {
                   type: 'value',
                   name:'通行数(万)',
+                  min:0,
+                  splitLine:{
+                    show:false,
+                  },
                   axisLabel: {
                     formatter: function (p) {
                       return p / 10000
@@ -674,16 +679,17 @@
                       return p / 1000
                     }
                   },
+                  
                   min:0
                 }
                 ],
                 series: [{
                     yAxisIndex: 1,
-                    data: Data.listCardCount.joinKey('counts'),
+                    data: Data.listCardCount.joinKey('counts').removeAt(Data.listCardCount.joinKey('counts').length-1),
                     type: 'bar'
                   },
                   {
-                    data: Data.listTollCount.joinKey('counts'),
+                    data: Data.listTollCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length-1),
                     type: 'bar'
                   }
                 ]
