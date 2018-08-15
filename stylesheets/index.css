@@ -202,7 +202,7 @@ body {
   font-size: 12px;
 }
 /* line 123, ../sass/index.scss */
-.item-wrap-b .item-wrap-bleft > div #iwb-b, .item-wrap-b .item-wrap-bleft > div #iwb-c {
+.item-wrap-b .item-wrap-bleft > div #iwb-b, .item-wrap-b .item-wrap-bleft > div #iwb-c, .item-wrap-b .item-wrap-bleft > div #iwb-a {
   height: 170px;
   width: 310px;
   margin: 0 auto;

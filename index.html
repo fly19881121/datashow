@@ -14,13 +14,8 @@
   <script src="digitalScroll.js"></script>
 
 
-<<<<<<< HEAD
 <script src="echarts.min.js"></script>
-=======
-  <script src="echarts.js"></script>
->>>>>>> b07712da99cb3809b162fa8d837d9a8665091693
 
-</head>
 
 <body>
   <div class="header clearix">
@@ -53,8 +48,9 @@
     </div>
     <div class="item-wrap-b">
       <div class="item-wrap-bleft">
-<<<<<<< HEAD
-        <div class="iwb-a"></div>
+        <div class="iwb-a">
+          <div id="iwb-a"></div>
+        </div>
         <div class="iwb-b">
           <div class="title">垫款加油</div>
           <div id="iwb-b">
@@ -71,11 +67,9 @@
             当月累计放款金额: <span>414.48 万元</span>
           </div>
         </div>
-=======
-        <div class="iwb-a" id="iwb-a"></div>
-        <div class="iwb-b" id="iwb-b"></div>
-        <div class="iwb-c"></div>
->>>>>>> b07712da99cb3809b162fa8d837d9a8665091693
+     <!--    <div class="iwb-a" id="iwb-a"></div>
+        <div class="iwb-b" id="iwb-b"></div> -->
+
       </div>
       <div class="item-wrap-bmiddle"></div>
       <div class="item-wrap-bright">
@@ -96,22 +90,17 @@
 
   <script type="text/javascript">
 
-
-
-
-
-
      var myChartB = echarts.init(document.getElementById('iwb-b'));
      var myChartC = echarts.init(document.getElementById('iwb-c'));
      var myChartF = echarts.init(document.getElementById('iwb-f'));
 
 
       //联名卡
-  var lmkAlistTollAmount = [198.47,224.44,282.03,340.25,391.60,430.57,473.54];  //累计放款量(亿元)
-  var lmkBlistTollCount = [169.09,190.70,231.87,276.33,325.77,373.56,425.18];    //累计消费金额(亿元)
-  var lmkDCounCount = [124.97,131.38,149.06,165.94,182.68,196.59,209.82];  //累计发卡量(万张)
+    var lmkAlistTollAmount = [198.47,224.44,282.03,340.25,391.60,430.57,473.54];  //累计放款量(亿元)
+    var lmkBlistTollCount = [169.09,190.70,231.87,276.33,325.77,373.56,425.18];    //累计消费金额(亿元)
+    var lmkDCounCount = [124.97,131.38,149.06,165.94,182.68,196.59,209.82];  //累计发卡量(万张)
 
-  var lmkCtime = ['1月','2月','3月','4月','5月','6月','7月'];
+    var lmkCtime = ['1月','2月','3月','4月','5月','6月','7月'];
 
 
   //好运条
@@ -365,15 +354,11 @@ $(function(){
     myChartB.setOption(optionB);
     myChartC.setOption(optionC);
  };
+</script>
   <script src="jsfunction.min.js"></script>
   <script src="drawChart.js"></script>
 
   <script type="text/javascript">
-    // function digital(){
-    var sum = parseInt(Math.random() * 10000 + 1);
-    var sum2 = parseInt(Math.random() * 1000 + 1);
-    // }
-
     $(function () {
       userDaka();
       setInterval(userDaka, 60000);
