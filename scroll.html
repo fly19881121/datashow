@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!-- <link href="stylesheets/index.css" rel="stylesheet"> -->
+
+<script src="jquery3.3.1.js"></script>
+
+<script src="digitalScroll.js"></script>
+<style>
+#all{
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+}
+#all .t_num i {
+  width: 33px;
+  height: 47px;
+  display: inline-block;
+  background: url(number1.png) no-repeat;
+  background-position: 0 0;
+}
+</style>
+<script type="text/javascript">
+
+
+// var sum = 13000;
+
+
+
+// function digital(){
+  var sum = parseInt(Math.random()*10000+1);
+// }
+
+$(function() {
+  setInterval(function(){
+    show_num1(sum)
+  },5000);
+});
+
+function show_num1(n) {
+  sum = parseInt(Math.random()*100000+1);
+  // sum=sum;
+  console.log(n);
+  var it = $(".t_num1 i");
+  var len = String(n).length;
+  for(var i = 0; i < len; i++) {
+    if(it.length <= i) {
+      $(".t_num1").append("<i></i>");
+    }
+    var num = String(n).charAt(i);
+    //根据数字图片的高度设置相应的值
+    var y = -parseInt(num) * 58;
+    var obj = $(".t_num1 i").eq(i);
+    obj.animate({
+      backgroundPosition: '(0 ' + String(y) + 'px)'
+    }, 'slow', 'swing', function() {});
+  }
+  $("#cur_num").val(n);
+}
+</script>
+
+
+</head>
+
+<body>
+
+
+<div id="all">
+  <span class="t_num t_num1"></span>
+</div>
+
+
+
+</body>
+</html>
+
+

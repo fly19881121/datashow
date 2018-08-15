@@ -1,0 +1,212 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/index.scss */
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+/* line 15, ../sass/index.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 20, ../sass/index.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 24, ../sass/index.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 29, ../sass/index.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 31, ../sass/index.scss */
+body {
+  background: #070725;
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* line 39, ../sass/index.scss */
+.header {
+  height: 22px;
+  padding: 10px;
+  text-align: center;
+}
+/* line 43, ../sass/index.scss */
+.header span {
+  color: #fff;
+  font-size: 20px;
+  padding: 0 10px;
+  line-height: 30px;
+}
+
+/* line 51, ../sass/index.scss */
+.main {
+  display: flex;
+  width: 100%;
+  height: 678px;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid #f00;
+}
+/* line 58, ../sass/index.scss */
+.main .item-wrap-a {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+/* line 64, ../sass/index.scss */
+.main .item-wrap-a > div {
+  background: #06113f;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+/* line 71, ../sass/index.scss */
+.main .item-wrap-a > div h5 {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+/* line 77, ../sass/index.scss */
+.main .item-wrap-a > div .totalnum {
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+/* line 80, ../sass/index.scss */
+.main .item-wrap-a > div .totalnum span {
+  display: inline-block;
+  padding: 4px 6px;
+  font-size: 24px;
+  color: #1bd1bb;
+  background: #0f1b4e;
+}
+
+/* line 93, ../sass/index.scss */
+.item-wrap-b {
+  padding: 6px;
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+/* line 98, ../sass/index.scss */
+.item-wrap-b .item-wrap-bleft {
+  width: 280px;
+}
+/* line 100, ../sass/index.scss */
+.item-wrap-b .item-wrap-bleft > div {
+  height: 172px;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+}
+/* line 106, ../sass/index.scss */
+.item-wrap-b .item-wrap-bright {
+  width: 280px;
+}
+/* line 108, ../sass/index.scss */
+.item-wrap-b .item-wrap-bright > div {
+  height: 172px;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+}
+/* line 115, ../sass/index.scss */
+.item-wrap-b .item-wrap-bmiddle {
+  flex: 1;
+  border: 1px solid #fff;
+  margin: 0 10px;
+  height: calc(100% - 138px);
+}
+
+/* line 126, ../sass/index.scss */
+.totalnum-a i, .totalnum-b i, .totalnum-c i, .totalnum-d i {
+  width: 33px;
+  height: 47px;
+  display: inline-block;
+  background: url(../number1.png) no-repeat;
+  background-position: 0 0;
+  margin: 0 5px;
+}

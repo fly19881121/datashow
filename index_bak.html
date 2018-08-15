@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="stylesheets/index.css" rel="stylesheet">
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script src="echarts.js"></script>
+</head>
+<body>
+  <div class="header clearix">
+    <h1 class="pull-left">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA6CAYAAAAURcGYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0NDQTAyNzk4MzU5MTFFODg3RDRCREE0RTdCN0EwOTgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0NDQTAyN0E4MzU5MTFFODg3RDRCREE0RTdCN0EwOTgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQ0NBMDI3NzgzNTkxMUU4ODdENEJEQTRFN0I3QTA5OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQ0NBMDI3ODgzNTkxMUU4ODdENEJEQTRFN0I3QTA5OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pjykte4AAAjtSURBVHja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" alt="">
+    </h1>
+    <span class="pull-left">千方小贷业务数据监测</span>
+  </div>
+  <div class="main">
+
+
+
+    <div class="datashow item">
+      <div id="item-b" class="33">
+      </div>
+    </div>
+
+    <div class="datashow item">
+      <div id="item-d"></div>
+    </div>
+
+    <div class="datashow item">
+      <div id="item-a"></div>
+    </div>
+
+
+
+    <div class="datashow item">
+      <div id="item-c"></div>
+    </div>
+
+
+
+  </div>
+
+
+<script>
+
+
+  // 时间戳转换当前时间
+  function timestampToTime(timestamp) {
+    var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    Y = date.getFullYear() + '-';
+    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    D = date.getDate() + ' ';
+    h = date.getHours() + ':';
+    m = date.getMinutes() + '';
+    s = date.getSeconds();
+    // return Y+M+D+h+m+s;
+    return h+m;
+  }
+
+
+
+
+  var myChartA = echarts.init(document.getElementById('item-a'));
+  var myChartC = echarts.init(document.getElementById('item-c'));
+  var myChartD = echarts.init(document.getElementById('item-d'));
+  var myChartB = echarts.init(document.getElementById('item-b'));
+
+
+  //data D  联名卡
+  var lmkAgrandtotalamount = [];  //累计放款量
+  var lmkBcurrentgrandtotal= [];  //当天放款量
+  var lmkCgrandtotalcard = [];    //联名卡累计发卡量
+  var lmkDtime = [];              //时间
+
+  optionD = {
+      title: {
+          text: '垫款加油业务监测',
+          textStyle:{
+            color:'#fff',
+            fontSize: 16,
+            fontWeight: 'normal'
+          }
+      },
+      axisPointer:{
+        label:{
+          backgroundColor: 'transparent',
+        }
+      },
+      tooltip : {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+      },
+      textStyle: {
+        color: '#fff'
+      },
+      legend: {
+        data:['联名卡累计发卡量(万)','累计放款量(千万)','当天放款量(万)'],
+        textStyle:{
+          color:'#fff',
+        }
+      },
+      toolbox: {
+          show : true,
+          feature : {
+              mark : {show: true},
+              dataView : {show: true, readOnly: false},
+              magicType : {show: true, type: ['line', 'bar']},
+              restore : {show: true},
+              saveAsImage : {show: false}
+          },
+          iconStyle: {
+            color:'#fff'
+          }
+      },
+      calculable : true,
+      xAxis : [
+          {
+              type : 'category',
+              boundaryGap : false,
+              data : lmkDtime,
+              nameTextStyle: {
+                color: '#fff'
+              },
+              axisLine:{
+                lineStyle: {
+                  color: '#fff'
+                }
+              }
+          }
+      ],
+      yAxis : [
+          {
+              type : 'value',
+              min:100,
+              axisLine:{
+                lineStyle: {
+                  color: '#fff'
+                }
+              }
+          }
+      ],
+      series : [
+          {
+              name:'联名卡累计发卡量(万)',
+              type:'line',
+              stack: '总量',
+              data:lmkCgrandtotalcard,
+              itemStyle: {
+                normal: {
+                  color: "#2ec7c9",
+                  lineStyle: {
+                    color: "#2ec7c9"
+                  }
+                }
+              }
+          },
+          {
+              name:'累计放款量(千万)',
+              type:'line',
+              stack: '总量',
+              data:lmkAgrandtotalamount,
+              itemStyle: {
+                normal: {
+                  color: "#f00",
+                  lineStyle: {
+                    color: "#f00"
+                  }
+                }
+              }
+          },
+          {
+              name:'当天放款量(万)',
+              type:'line',
+              stack: '总量',
+              data:lmkBcurrentgrandtotal,
+              itemStyle: {
+                normal: {
+                  color: "green",
+                  lineStyle: {
+                    color: "green"
+                  }
+                }
+              }
+          },
+
+      ]
+  };
+  function lmkGet(){
+    $.ajax({
+        cache:true,//保留缓存数据
+        type:"get",//为post请求
+        url:"http://lmk.95155.com/lmkgrand/grand",//这是我在后台接受数据的文件名
+        // data:$('#loginForm').serialize(),//将该表单序列化
+        dataType: 'text',
+        success: function(result) {
+          var lmkdata =  eval('(' + result + ')');
+
+          lmkAgrandtotalamount.push((lmkdata.dataDetail.grandtotalamount*0.001).toFixed(5));
+          lmkBcurrentgrandtotal.push(lmkdata.dataDetail.currentgrandtotal);
+          lmkCgrandtotalcard.push((lmkdata.dataDetail.grandtotalcard*0.0001).toFixed(4));
+          lmkDtime.push(lmkdata.dataDetail.time);
+
+
+          // console.log(lmkAgrandtotalamount);
+          // console.log(lmkBcurrentgrandtotal);
+          // console.log(lmkCgrandtotalcard);
+          // console.log(lmkDtime);
+
+
+          myChartD.setOption(optionD);
+
+        },
+        error: function(e){
+          console.log(e);
+        }
+    });
+  };
+  function d(){
+    lmkGet();
+  };
+
+
+  //dataC  好运条
+  var hytAcurrentgrandtotal = [];  //当日实时放款量
+  var hytBgrandtotalaccum = [];    //累计放款总数
+  var hytCgrandtotaluser = [];     //累计用户数
+  var hytDtime = [];  //时间
+
+  optionC = {
+      title: {
+          text: '好运条数据统计'
+      },
+      tooltip : {
+          trigger: 'axis'
+      },
+      legend: {
+          data:['当日实时放款量(百)','累计放款总数(十万)','累计用户数']
+      },
+      toolbox: {
+          show : true,
+          feature : {
+              mark : {show: true},
+              dataView : {show: true, readOnly: false},
+              magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+              restore : {show: true},
+              saveAsImage : {show: true}
+          }
+      },
+      calculable : true,
+      xAxis : [
+          {
+              type : 'category',
+              boundaryGap : false,
+              data : hytDtime
+          }
+      ],
+      yAxis : [
+          {
+              type : 'value'
+          }
+      ],
+      series : [
+          {
+              name:'当日实时放款量(百)',
+              type:'line',
+              stack: '总量',
+              data:hytAcurrentgrandtotal
+          },
+          {
+              name:'累计放款总数(十万)',
+              type:'line',
+              stack: '总量',
+              data:hytBgrandtotalaccum
+          },
+          {
+              name:'累计用户数',
+              type:'line',
+              stack: '总量',
+              data:hytCgrandtotaluser
+          }
+      ]
+  };
+  function hytGet(){
+    $.ajax({
+        // cache:true,//保留缓存数据
+        type:"get",//为post请求
+        // url:"http://192.168.110.176/hyt-pages-api/hytTransData/queryTransData",//这是我在后台接受数据的文件名
+        url:"http://hyt.95155.com/hyt-pages-api/hytTransData/queryTransData",//这是我在后台接受数据的文件名
+        dataType: 'json',
+        success: function(result){
+          hytAcurrentgrandtotal.push((result.dataDetail[0].currentgrandtotal*0.01*0.01).toFixed(2));
+          hytBgrandtotalaccum.push((result.dataDetail[0].grandtotalaccum*0.0001*0.001).toFixed(4));
+          hytCgrandtotaluser.push(result.dataDetail[0].grandtotaluser);
+          hytDtime.push(result.dataDetail[0].time);
+
+          myChartC.setOption(optionC);
+        },
+        error: function(e){
+          console.log(e);
+        }
+    });
+  }
+
+  function c(){
+    hytGet();
+  };
+
+
+
+
+  //dataB  ETC重庆高速
+
+  var etcAlistTollAmount = [];  //按小时汇总通行交易金额
+  var etcBlistTollCount = [];    //按小时汇总通行交易笔数
+  var etcDtime = [];  //时间
+
+  optionB = {
+      title: {
+          text: 'ETC金融(重高)业务数据监测'
+      },
+      tooltip : {
+          trigger: 'axis'
+      },
+      legend: {
+          data:['当日通行交易金额(千)','通行交易笔数']
+      },
+      toolbox: {
+          show : true,
+          feature : {
+              mark : {show: true},
+              dataView : {show: true, readOnly: false},
+              magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+              restore : {show: true},
+              saveAsImage : {show: true}
+          }
+      },
+      calculable : true,
+      xAxis : [
+          {
+              type : 'category',
+              boundaryGap : false,
+              data : etcDtime
+          }
+      ],
+      yAxis : [
+          {
+              type : 'value',
+          }
+      ],
+      series : [
+          {
+              name:'当日通行交易金额(千)',
+              type:'line',
+              stack: '总量',
+              data:etcAlistTollAmount
+          },
+          {
+              name:'通行交易笔数',
+              type:'line',
+              stack: '总量',
+              data:etcBlistTollCount
+          }
+      ]
+  };
+  function etcGet(){
+    var myform = {
+      param: {
+        currentUserName: "测试管理员",
+      }
+    };
+    $.ajax({
+        cache:true,//保留缓存数据
+        type:"POST",//为post请求
+        // url:"https://ladybird.awservice.net/router/local/rest?method=aws.cg.etc.queryEtcTollData",//这是我在后台接受数据的文件名
+        url:"https://qf.awservice.net/router/local/rest?method=aws.cg.etc.queryEtcTollData",//这是我在后台接受数据的文件名
+        data:JSON.stringify(myform.param),
+        dataType: 'JSON',
+        beforeSend: function(request) {
+          request.setRequestHeader('ownerFlag', 'ownerFlag123');
+        },
+        contentType: 'application/json;charset=utf-8',
+
+        async:true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        error:function(request){//请求失败之后的操作
+            return;
+        },
+        success:function(data){//请求成功之后的操作
+            // console.log("success");
+            // console.log(data);
+            etcAlistTollAmount.splice(0,etcAlistTollAmount.length);
+            etcDtime.splice(0,etcDtime.length);
+            etcBlistTollCount.splice(0,etcBlistTollCount.length);
+            // etcAlistTollAmount.push(data.result.listTollAmount)
+            for(var i = 0;i<data.result.listTollAmount.length;i++){
+              etcAlistTollAmount.push((data.result.listTollAmount[i].sums*0.001).toFixed(5));
+              etcDtime.push(data.result.listTollAmount[i].time);
+            }
+            for(var i = 0;i<data.result.listTollCount.length;i++){
+              etcBlistTollCount.push(data.result.listTollCount[i].counts);
+            }
+
+
+            myChartB.setOption(optionB);
+
+            // console.log(etcAlistTollAmount);
+        }
+    });
+
+  }
+
+  function b(){
+    etcGet();
+  };
+
+
+
+
+  //dataA   大卡实时数据
+  var dakaAonlineuser = [];  //在线用户数
+  var dakaBauthen = [];    //已认证用户数
+  var dakaCregisternum = [];  //当日注册用户数
+  var dakaDtime = [];  //时间
+
+  optionA = {
+      title: {
+          text: '大卡业务数据监测'
+      },
+      tooltip : {
+          trigger: 'axis'
+      },
+      legend: {
+          data:['在线用户数(百)','已认证用户数(千)','当日注册用户数']
+      },
+      toolbox: {
+          show : true,
+          feature : {
+              mark : {show: true},
+              dataView : {show: true, readOnly: false},
+              magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+              restore : {show: true},
+              saveAsImage : {show: true}
+          }
+      },
+      calculable : true,
+      xAxis : [
+          {
+              type : 'category',
+              boundaryGap : false,
+              data : dakaDtime
+          }
+      ],
+      yAxis : [
+          {
+              type : 'value',
+          }
+      ],
+      series : [
+          {
+              name:'在线用户数(百)',
+              type:'line',
+              stack: '总量',
+              data:dakaAonlineuser
+          },
+          {
+              name:'已认证用户数(千)',
+              type:'line',
+              stack: '总量',
+              data:dakaBauthen
+          },
+          {
+              name:'当日注册用户数',
+              type:'line',
+              stack: '总量',
+              data:dakaCregisternum
+          }
+      ]
+  };
+
+  function userDaka(){
+    $.ajax({
+        // cache:true,//保留缓存数据
+        type:"get",//为post请求
+        url:"http://103.10.87.52:1080/daka-api/rest/api/queryData",//这是我在后台接受数据的文件名
+        success: function(result){
+          var cc = JSON.parse(result).body;
+          // console.log(cc)
+          let ccJson=eval('(' + cc + ')');
+          dakaDtime.push(timestampToTime(parseInt(ccJson.createTime)));
+          dakaAonlineuser.push((ccJson.onlineuser*0.01).toFixed(2));
+          dakaBauthen.push((ccJson.authen*10).toFixed(2));
+          dakaCregisternum.push(ccJson.registernum);
+          myChartA.setOption(optionA);
+
+          console.log(dakaAonlineuser,dakaBauthen,dakaCregisternum);
+        },
+        error: function(e){
+          console.log(e);
+        }
+    });
+  }
+
+  function a(){
+    userDaka();
+  };
+
+   window.onload = function(){
+    a();
+    c();
+    d();
+    b();
+   };
+
+
+  window.setInterval('a()',600000);
+  window.setInterval('c()',600000);
+  window.setInterval('b()',600000);
+  window.setInterval('d()',600000);
+
+
+  </script>
+</body>
+</html>
