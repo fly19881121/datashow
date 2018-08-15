@@ -98,7 +98,8 @@ html, body {
 
 /* line 31, ../sass/index.scss */
 body {
-  background: #070725;
+  /* background: #070725; */
+  background: #020107;
   width: 1280px;
   margin: 0 auto;
 }
@@ -225,10 +226,21 @@ body {
 /* line 145, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div {
   margin-bottom: 10px;
-  background: #06113f;
+  /* background: #06113f; */
+  background: rgba(68,72,86,.5);
   position: relative;
 }
+<<<<<<< HEAD
 /* line 150, ../sass/index.scss */
+=======
+.border-lt{
+  position:absolute;top:0;left:0;width:20px;height:20px;border-top:solid 1px #54dcda;border-left:solid 1px #54dcda;
+}
+.border-br{
+  position:absolute;bottom:0;right:0;width:20px;height:20px;border-bottom:solid 1px #54dcda;border-right:solid 1px #54dcda;
+}
+/* line 149, ../sass/index.scss */
+>>>>>>> c722ffaea69482a977cc07575bd9781ca3b61215
 .item-wrap-b .item-wrap-bright > div .title {
   position: absolute;
   width: 100%;
