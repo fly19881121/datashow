@@ -73,7 +73,12 @@
         <div class="iwb-b" id="iwb-b"></div> -->
 
         </div>
-        <div class="item-wrap-bmiddle"></div>
+        <div class="item-wrap-bmiddle">
+          <div class="title">绑定大卡车辆数</div>
+          <div class="">
+            绑定大卡车辆数 <span> 29 0000</span>
+          </div>
+        </div>
         <div class="item-wrap-bright">
           <div class="iwb-d">
             <div class="title">ETC通行费统计</div>
@@ -141,21 +146,11 @@
         optionB = {
           // backgroundColor:'#fff',
           // color : ['#ff7f50','#87cefa', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
-          // color: ['#2fe71f', '#fffe20', '#0000FF', '#FF6103', '#A020F0', '#f00', '#ca8622', '#bda29a', '#6e7074','#546570', '#c4ccd3'
-          // ],
-          color: {
-              type: 'linear',
-              x: 0,
-              y: 0,
-              x2: 0,
-              y2: 1,
-              colorStops: [{
-                  offset: 0, color: 'red' // 0% 处的颜色
-              }, {
-                  offset: 1, color: 'blue' // 100% 处的颜色
-              }],
-              globalCoord: false // 缺省为 false
-          }
+          color: ['#2fe71f', '#fffe20', '#0000FF', '#FF6103', '#A020F0', '#f00', '#ca8622', '#bda29a', '#6e7074','#546570', '#c4ccd3'
+          ],
+          title: {
+            top: '0'
+          },
           tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -233,7 +228,15 @@
                 lineStyle: {
                   color: '#fff',
                 }
-              }
+              },
+              splitLine : {
+                show:false,
+                lineStyle: {
+                    color: '#483d8b',
+                    type: 'dashed',
+                    width: 1
+                }
+              },
             },
             {
               type: 'value',
@@ -250,7 +253,6 @@
               axisLine: {
                 lineStyle: {
                   color: '#fff',
-
                 }
               }
             }

@@ -42,9 +42,10 @@ body{
   text-align:center;
   span{
     color:#fff;
-    font-size:20px;
+    font-size:24px;
     padding:0 10px;
     line-height:30px;
+    text-shadow:2px 2px 5px #FFFFFF, 2px 2px 5px #333333;
   }
 }
 
@@ -61,6 +62,7 @@ body{
     text-align:center;
     flex-wrap: nowrap;
     justify-content: space-around;
+    // display:none;
     >div{
       background:#06113f;
       width:300px;
@@ -163,7 +165,7 @@ body{
         font-size:12px;
       }
       #iwb-d,#iwb-e,#iwb-f{
-        height:200px;
+        height:160px;
         width:310px;
         margin:0 auto;
       }
@@ -172,11 +174,24 @@ body{
 
   .item-wrap-bmiddle{
     flex:1;
-    border:1px solid #fff;
+    // border:1px solid #fff;
     margin:0 10px;
     height:calc(100% - 138px);
-    background: url(../mapbg.png) no-repeat center top;
+    background: url(../mapbg.png) no-repeat center center #011427;
     background-size:contain;
+    position: relative;
+    border:1px solid rgba(27,209,187,.3);
+    .title{
+      color:#fff;
+      line-height:30px;
+      padding:0 20px;
+      position: absolute;
+      width:100%;
+      height:30px;
+      line-height:30px;
+      left:40px;
+      top:20px;
+    }
   }
 }
 
