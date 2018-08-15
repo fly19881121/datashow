@@ -597,8 +597,8 @@
                 },
                 grid: {
                   left: '0%',
-                  right: '2%',
-                  bottom: '12%',
+                  right: '3%',
+                  bottom: '16%',
                   containLabel: true
                 },
                 xAxis: {
@@ -613,10 +613,10 @@
                 },
                 yAxis: {
                   type: 'value',
+                  name:'金额（万元）',
                   axisLabel: {
                     formatter: function (p) {
-                      console.log(p);
-                      return p >= 10000 ? p / 10000 + '万' : p
+                      return p / 10000
                     }
                   }
                 },
@@ -653,18 +653,32 @@
                   }
                 },
                 grid: {
-                  left: '12%'
+                  left: '10%',
+                  right:'10%',
                 },
-                yAxis: {
+                yAxis: [
+                {
                   type: 'value',
+                  name:'通行数(万)',
                   axisLabel: {
                     formatter: function (p) {
-                      console.log(p);
-                      return p >= 10000 ? p / 10000 + '万' : p
+                      return p / 10000
                     }
-                  }
+                  },
                 },
+                {
+                  type: 'value',
+                  name:'发卡量(千)',
+                  axisLabel: {
+                    formatter: function (p) {
+                      return p / 1000
+                    }
+                  },
+                  min:0
+                }
+                ],
                 series: [{
+                    yAxisIndex: 1,
                     data: Data.listCardCount.joinKey('counts'),
                     type: 'bar'
                   },
