@@ -182,13 +182,14 @@ body {
 }
 /* line 107, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div .title {
+  position: absolute;
   width: 100%;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   text-indent: 10px;
   z-index: 10;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
 }
 /* line 117, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div .footer {
@@ -204,30 +205,32 @@ body {
   height: 200px;
   width: 300px;
   margin: 0 auto;
+  padding-top: 20px;
 }
-/* line 130, ../sass/index.scss */
+/* line 131, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div #iwb-a {
   height: 150px;
   width: 300px;
   margin: 0 auto;
 }
-/* line 137, ../sass/index.scss */
+/* line 138, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft .iwb-a {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
 }
-/* line 142, ../sass/index.scss */
+/* line 143, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright {
   width: 340px;
 }
-/* line 144, ../sass/index.scss */
+/* line 145, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div {
   margin-bottom: 10px;
   background: #06113f;
   position: relative;
 }
-/* line 149, ../sass/index.scss */
+/* line 150, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div .title {
+  position: absolute;
   width: 100%;
   height: 30px;
   line-height: 30px;
@@ -236,7 +239,7 @@ body {
   color: #fff;
   font-size: 14px;
 }
-/* line 159, ../sass/index.scss */
+/* line 160, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div .footer {
   height: 30px;
   line-height: 30px;
@@ -245,13 +248,13 @@ body {
   color: #fff;
   font-size: 12px;
 }
-/* line 167, ../sass/index.scss */
+/* line 168, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div #iwb-d, .item-wrap-b .item-wrap-bright > div #iwb-e, .item-wrap-b .item-wrap-bright > div #iwb-f {
-  height: 160px;
-  width: 310px;
+  height: 220px;
+  width: 280px;
   margin: 0 auto;
 }
-/* line 175, ../sass/index.scss */
+/* line 176, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle {
   flex: 1;
   margin: 0 10px;
@@ -261,7 +264,7 @@ body {
   position: relative;
   border: 1px solid rgba(27, 209, 187, 0.3);
 }
-/* line 184, ../sass/index.scss */
+/* line 185, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .title {
   color: #fff;
   line-height: 30px;
@@ -273,7 +276,7 @@ body {
   left: 40px;
   top: 20px;
 }
-/* line 195, ../sass/index.scss */
+/* line 196, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum {
   position: absolute;
   width: 100px;
@@ -284,7 +287,7 @@ body {
   font-size: 12px;
   text-align: center;
 }
-/* line 205, ../sass/index.scss */
+/* line 206, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span {
   position: relative;
   width: 100%;
@@ -297,7 +300,7 @@ body {
   margin-top: 10px;
   color: #ed7d31;
 }
-/* line 216, ../sass/index.scss */
+/* line 217, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span::before {
   position: absolute;
   width: 10px;
@@ -308,7 +311,7 @@ body {
   top: 0;
   left: 0;
 }
-/* line 226, ../sass/index.scss */
+/* line 227, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span::after {
   position: absolute;
   width: 10px;
@@ -320,7 +323,7 @@ body {
   right: 0;
 }
 
-/* line 244, ../sass/index.scss */
+/* line 245, ../sass/index.scss */
 .totalnum-a i, .totalnum-b i, .totalnum-c i, .totalnum-d i {
   width: 33px;
   height: 47px;

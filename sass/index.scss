@@ -13,7 +13,7 @@
     height: 0;
 }
 .clearfix{
-    zoom:1;
+  zoom:1;
 }
 
 
@@ -105,14 +105,14 @@ body{
       background:#06113f;
       position: relative;
       .title{
-        // position: absolute;
+        position: absolute;
         width:100%;
-        height:30px;
-        line-height:30px;
+        height:40px;
+        line-height:40px;
         text-indent:10px;
         z-index: 10;
         color:#fff;
-        font-size:14px;
+        font-size:16px;
       }
       .footer{
         height:30px;
@@ -126,6 +126,7 @@ body{
         height:200px;
         width:300px;
         margin:0 auto;
+        padding-top:20px;
       }
       #iwb-a{
         height:150px;
@@ -147,7 +148,7 @@ body{
       background:#06113f;
       position: relative;
       .title{
-        // position: absolute;
+        position: absolute;
         width:100%;
         height:30px;
         line-height:30px;
@@ -165,8 +166,8 @@ body{
         font-size:12px;
       }
       #iwb-d,#iwb-e,#iwb-f{
-        height:160px;
-        width:310px;
+        height:220px;
+        width:280px;
         margin:0 auto;
       }
     }
