@@ -141,8 +141,7 @@
         optionB = {
           // backgroundColor:'#fff',
           // color : ['#ff7f50','#87cefa', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
-          color: ['#ff7f50', '#87cefa', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074',
-            '#546570', '#c4ccd3'
+          color: ['#2fe71f', '#fffe20', '#f00', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074','#546570', '#c4ccd3'
           ],
           tooltip: {
             trigger: 'axis',
@@ -184,7 +183,21 @@
             data: lmkCtime,
             axisPointer: {
               type: 'shadow'
-            }
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+           splitLine : {
+              show:false,
+              lineStyle: {
+                  color: '#483d8b',
+                  type: 'dashed',
+                  width: 1
+              }
+          },
+
           }],
           yAxis: [{
               type: 'value',
@@ -194,6 +207,14 @@
               offset: 0,
               axisLabel: {
                 formatter: '{value}'
+              },
+              nameTextStyle: {
+                color: '#fff'
+              },
+              axisLine: {
+                lineStyle: {
+                  color: '#fff',
+                }
               }
             },
             {
@@ -204,6 +225,15 @@
               offset: 0,
               axisLabel: {
                 formatter: '{value}'
+              },
+              nameTextStyle: {
+                color: '#fff'
+              },
+              axisLine: {
+                lineStyle: {
+                  color: '#fff',
+
+                }
               }
             }
           ],
@@ -211,7 +241,10 @@
               name: '放款金额',
               type: 'bar',
               // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
-              data: lmkAlistTollAmount
+              data: lmkAlistTollAmount,
+              itemStyle: {
+                color: 'green'
+              }
             },
             {
               name: '消费金额',
