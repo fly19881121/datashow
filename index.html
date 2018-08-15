@@ -76,11 +76,11 @@
         <div class="iwb-d"></div>
         <div class="iwb-e"></div>
         <div class="iwb-f">
-           <div class="title">运费垫资</div>
+           <div class="title">货车分期</div>
           <div id="iwb-f">
           </div>
           <div class="footer">
-            当月累计放款金额: <span>414.48 万元</span>
+            当月累计放款金额: <span>406 万元</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,8 @@
 
   //联名卡配置
   optionB = {
-    backgroundColor:'#fff',
+    // backgroundColor:'#fff',
+    // color : ['#ff7f50','#87cefa', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
     color : ['#ff7f50','#87cefa', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
      tooltip: {
         trigger: 'axis',
@@ -145,7 +146,10 @@
     },
     legend: {
         data:['放款金额','消费金额','发卡量'],
-        bottom: '10'
+        bottom: '10',
+        textStyle: {
+          color: '#fff'
+        }
     },
     xAxis: [
         {
@@ -316,7 +320,7 @@
           type: 'value',
           name: '金额(万元)',
           min: 0,
-          max: 250,
+          max: 4000,
           offset:0,
           axisLabel: {
               formatter: '{value}'
@@ -326,7 +330,7 @@
           type: 'value',
           name: '笔数(笔)',
           min: 0,
-          max: 5000,
+          max: 300,
           offset:0,
           axisLabel: {
               formatter: '{value}'
@@ -342,7 +346,7 @@
         },
         {
             name:'放款笔数',
-            type:'bar',
+            type:'line',
             yAxisIndex: 1,
             // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
             data:carBgrandtotalaccum
@@ -396,9 +400,9 @@
           var cc = JSON.parse(result).body;
           let ccJson = eval('(' + cc + ')');
           show_num1(ccJson.onlineuser, '.totalnum-a');
-          show_num1(ccJson.authen, '.totalnum-b');
+          show_num1(ccJson.authen, '.totalnum-d');
           show_num1(ccJson.registernum, '.totalnum-c');
-          show_num1(ccJson.authenAll, '.totalnum-d');
+          show_num1(ccJson.authenAll, '.totalnum-b');
 
           var pieData = [{
               name: '车主',
@@ -443,7 +447,7 @@
               data: pieData.joinKey('name'),
               textStyle:{
                 color:'#fff',
-                fontSize:'14'
+                fontSize:'12'
               }
             },
             series: [{
@@ -460,7 +464,7 @@
                 emphasis: {
                   show: false,
                   textStyle: {
-                    fontSize: '20',
+                    fontSize: '12',
                     fontWeight: 'bold'
                   }
                 }

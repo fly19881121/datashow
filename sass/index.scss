@@ -31,9 +31,9 @@ html,body{height:100%;}
 body{
   background:#070725;
   width:1280px;
-  height:720px;
+  // height:720px;
   margin:0 auto;
-  overflow:hidden;
+  // overflow:hidden;
 }
 
 .header{
@@ -65,7 +65,7 @@ body{
       background:#06113f;
       width:300px;
       margin:10px;
-      border:1px solid #fff;
+      // border:1px solid #fff;
       padding:10px;
       box-sizing:border-box;
       h5{
@@ -96,7 +96,7 @@ body{
   display:flex;
   height:100%;
   .item-wrap-bleft{
-    width:310px;
+    width:320px;
     >div{
       // height:200px;
       margin-bottom:10px;
@@ -120,15 +120,25 @@ body{
         color:#fff;
         font-size:12px;
       }
-      #iwb-b,#iwb-c,#iwb-a{
-        height:170px;
-        width:310px;
+      #iwb-b,#iwb-c{
+        height:200px;
+        width:300px;
         margin:0 auto;
       }
+      #iwb-a{
+        height:150px;
+        width:300px;
+        margin:0 auto;
+      }
+
+    }
+    .iwb-a{
+      background:rgba(255,255,255,.4);
+      border-radius:10px;
     }
   }
   .item-wrap-bright{
-    width:310px;
+    width:340px;
     >div{
       // height:200px;
       margin-bottom:10px;
@@ -153,7 +163,7 @@ body{
         font-size:12px;
       }
       #iwb-d,#iwb-e,#iwb-f{
-        height:170px;
+        height:200px;
         width:310px;
         margin:0 auto;
       }
