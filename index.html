@@ -995,6 +995,13 @@
               var Data = data.result;
               var ff_mount = Data.listTollApplyAmount.joinKey('sums');
               $("#ff_mount").html((ff_mount[ff_mount.length - 1] / 10000).toFixed(2) + '万元');
+              var cardData = Data.listCardCount.joinKey('counts');
+              console.log(cardData);
+              for(var i=0;i<cardData.length-1;i++){
+                cardData[i] = cardData[i]*50;
+              }
+              console.log(1111);
+              console.log(cardData);
               var optionD = {
                  color: ['#fffe20', '#4169E1', '#f00'],
                   title: {
@@ -1011,7 +1018,7 @@
             },
             formatter: function (p) {
               console.log(p);
-              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万' + '<br/>' + p[3].seriesName + ':' + p[3].value
+              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万' + '<br/>' + p[3].seriesName + ':' + p[3].value/50
             }
           },
           axisPointer:{
@@ -1160,7 +1167,7 @@
               type: 'bar',
               barWidth: '6',
               yAxisIndex: 1,
-              data: Data.listCardCount.joinKey('counts').removeAt(Data.listCardCount.joinKey('counts').length -
+              data: cardData.removeAt(cardData.length -
                 1)
             },
           ]
