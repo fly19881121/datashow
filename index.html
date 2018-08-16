@@ -65,7 +65,7 @@
             <div id="iwb-b">
             </div>
             <div class="footer">
-              8月18号本月已发放:
+              截至8月18号本月已发放:
               <span>19.98 亿元</span>
             </div>
           </div>
@@ -74,7 +74,7 @@
             <div id="iwb-c">
             </div>
             <div class="footer">
-              8月当前已发放:
+              截至8月18号本月已发放:
               <span>414.48 万元</span>
             </div>
           </div>
@@ -84,10 +84,6 @@
         </div>
         <div class="item-wrap-bmiddle">
           <div class="title">全国货运车辆热力分布</div>
-          <div class="showDanum">
-            货运平台接入车辆数
-            <span class="carCount"> 5,480,000</span>
-          </div>
         </div>
         <div class="item-wrap-bright">
           <div class="iwb-d" style="position:realtive">
@@ -96,7 +92,7 @@
             <div class="title">ETC重高</div>
             <div id="iwb-d" style="background:#fff;"></div>
             <div class="footer">
-              8月18号本月已发放:
+              截至8月18号本月已发放:
               <span id="ff_mount"></span>
             </div>
           </div>
@@ -125,7 +121,7 @@
             <div id="iwb-f">
             </div>
             <div class="footer">
-              8月18号本月已发放:
+              截至8月18号本月已发放:
               <span>406 万元</span>
             </div>
           </div>
@@ -187,8 +183,8 @@
           grid: {
             left: '0%',
             right: '3%',
-            top: '22%',
-            bottom: '20%',
+            top: '10%',
+            bottom: '14%',
             containLabel: true
           },
           tooltip: {
@@ -231,7 +227,7 @@
               color: '#fff'
             }
           },
-          xAxis: [{
+          xAxis: {
             type: 'category',
             data: lmkCtime,
             axisPointer: {
@@ -251,12 +247,12 @@
               }
             },
 
-          }],
+          },
           yAxis: [{
               type: 'value',
               name: '金额(亿元)',
               min: 0,
-              max: 800,
+              max: 600,
               offset: 0,
               axisLabel: {
                 formatter: '{value}'
@@ -284,7 +280,7 @@
               type: 'value',
               name: '发卡量(万张)',
               min: 100,
-              max: 400,
+              max: 300,
               offset: 0,
               axisLabel: {
                 formatter: '{value}'
@@ -311,7 +307,8 @@
           ],
           series: [{
               name: '放款金额',
-              type: 'bar',
+              type: 'line',
+
               // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
               data: lmkAlistTollAmount,
               itemStyle: {
@@ -320,13 +317,14 @@
             },
             {
               name: '消费金额',
-              type: 'bar',
+              type: 'line',
               // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
               data: lmkBlistTollCount
             },
             {
               name: '发卡量',
-              type: 'line',
+              type: 'bar',
+              barWidth: '6',
               yAxisIndex: 1,
               // data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3]
               data: lmkDCounCount
@@ -352,8 +350,8 @@
           grid: {
             left: '3%',
             right: '0%',
-            top: '16%',
-            bottom: '20%',
+            top: '20%',
+            bottom: '24%',
             containLabel: true
           },
           axisPointer:{
@@ -470,12 +468,14 @@
           series: [{
               name: '放款金额',
               type: 'bar',
+              barWidth: '6',
               // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
               data: hytAcurrentgrandtotal
             },
             {
               name: '放款笔数',
               type: 'bar',
+              barWidth: '6',
               yAxisIndex: 1,
               // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
               data: hytBgrandtotalaccum
@@ -508,8 +508,8 @@
           grid: {
             left: '0%',
             right: '0%',
-            top: '22%',
-            bottom: '16%',
+            top: '20%',
+            bottom: '26%',
             containLabel: true
           },
           toolbox: {
@@ -621,6 +621,7 @@
           series: [{
               name: '放款金额',
               type: 'bar',
+              barWidth: '6',
               // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
               data: carAcurrentgrandtotal
             },
@@ -660,7 +661,7 @@
             left: '0%',
             right: '0%',
             top: '22%',
-            bottom: '16%',
+            bottom: '26%',
             containLabel: true
           },
           toolbox: {
@@ -929,12 +930,12 @@
                   data: pieData.joinKey('name'),
                   textStyle: {
                     color: '#fff',
-                    fontSize: '14'
+                    fontSize: '12'
                   }
                 },
                 series: [{
                   type: 'pie',
-                  center: ['70%', '50%'],
+                  center: ['75%', '50%'],
                   radius: ['50%', '75%'],
                   avoidLabelOverlap: false,
                   hoverAnimation: false,
@@ -946,8 +947,7 @@
                     emphasis: {
                       show: false,
                       textStyle: {
-                        fontSize: '20',
-                        fontWeight: 'bold'
+                        fontSize: '12',
                       }
                     }
                   },
@@ -1011,7 +1011,7 @@
             },
             formatter: function (p) {
               console.log(p);
-              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万'
+              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万' + '<br/>' + p[3].seriesName + ':' + (p[3].value)*1000
             }
           },
           axisPointer:{
@@ -1041,7 +1041,7 @@
           legend: {
             // x: 'center',
             // y: 'bottom',
-            data: ['累计发放', '累计还款', '通行笔数'],
+            data: ['累计发放', '累计还款', '通行笔数', '发卡量'],
             bottom: '10',
             textStyle: {
               color: '#fff'
@@ -1050,8 +1050,8 @@
           grid: {
             left: '0%',
             right: '6%',
-            top: '16%',
-            bottom: '16%',
+            top: '22%',
+            bottom: '26%',
             containLabel: true
           },
           xAxis: [{
@@ -1138,11 +1138,13 @@
           series: [{
               name: '累计发放',
               type: 'bar',
+              barWidth: '6',
               data: Data.listTollApplyAmount.joinKey('sums').removeAt(Data.listTollApplyAmount.joinKey('sums').length-1)
             },
             {
               name: '累计还款',
               type: 'bar',
+              barWidth: '6',
               data: Data.listTollRepaymentAmount.joinKey('sums').removeAt(Data.listTollRepaymentAmount.joinKey('sums').length-1)
             },
             {
@@ -1150,6 +1152,13 @@
               type: 'line',
               yAxisIndex: 1,
               data: Data.listTollCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
+                1)
+            },
+            {
+              name: '发卡量',
+              type: 'line',
+              yAxisIndex: 1,
+              data: Data.listCardCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
                 1)
             },
           ]

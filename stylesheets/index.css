@@ -99,17 +99,18 @@ html, body {
 /* line 31, ../sass/index.scss */
 body {
   background: #070725;
-  width: 1280px;
+  width: 1268px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
-/* line 42, ../sass/index.scss */
+/* line 41, ../sass/index.scss */
 .header {
   height: 22px;
   padding: 10px;
   text-align: center;
 }
-/* line 46, ../sass/index.scss */
+/* line 45, ../sass/index.scss */
 .header span {
   color: #fff;
   font-size: 30px;
@@ -118,15 +119,15 @@ body {
   text-shadow: 2px 2px 5px #FFFFFF, 2px 2px 5px #333333;
 }
 
-/* line 55, ../sass/index.scss */
+/* line 54, ../sass/index.scss */
 .main {
   display: flex;
   width: 100%;
-  height: 800px;
+  height: calc(100% - 52px);
   flex-wrap: wrap;
   align-items: center;
 }
-/* line 62, ../sass/index.scss */
+/* line 61, ../sass/index.scss */
 .main .item-wrap-a {
   display: flex;
   width: 100%;
@@ -134,27 +135,26 @@ body {
   flex-wrap: nowrap;
   justify-content: space-around;
 }
-/* line 69, ../sass/index.scss */
+/* line 68, ../sass/index.scss */
 .main .item-wrap-a > div {
-  background: #06113f;
   width: 300px;
-  margin: 10px;
+  margin: 5px 0;
   padding: 5px;
   box-sizing: border-box;
 }
-/* line 76, ../sass/index.scss */
+/* line 75, ../sass/index.scss */
 .main .item-wrap-a > div h5 {
   font-size: 14px;
   color: #fff;
   text-align: center;
   line-height: 30px;
 }
-/* line 82, ../sass/index.scss */
+/* line 81, ../sass/index.scss */
 .main .item-wrap-a > div .totalnum {
   text-align: center;
   padding: 10px 0 0 0;
 }
-/* line 85, ../sass/index.scss */
+/* line 84, ../sass/index.scss */
 .main .item-wrap-a > div .totalnum span {
   display: inline-block;
   padding: 4px 6px;
@@ -163,12 +163,13 @@ body {
   background: #0f1b4e;
 }
 
-/* line 98, ../sass/index.scss */
+/* line 97, ../sass/index.scss */
 .item-wrap-b {
   padding: 6px;
   width: 100%;
   display: flex;
-  height: 100%;
+  height: calc(100% - 119px);
+  overflow: hidden;
 }
 /* line 103, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft {
@@ -176,14 +177,14 @@ body {
 }
 /* line 105, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   position: relative;
 }
 /* line 110, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div .title {
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 30px;
+  line-height: 30px;
   text-indent: 10px;
   z-index: 10;
   color: #fff;
@@ -200,13 +201,13 @@ body {
 }
 /* line 128, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div #iwb-b, .item-wrap-b .item-wrap-bleft > div #iwb-c {
-  height: 180px;
+  height: 160px;
   width: 300px;
   margin: 0 auto;
 }
 /* line 134, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div #iwb-a {
-  height: 150px;
+  height: 100px;
   width: 300px;
   margin: 0 auto;
 }
@@ -220,14 +221,14 @@ body {
 }
 /* line 149, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   position: relative;
 }
 /* line 154, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div .title {
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 24px;
+  line-height: 24px;
   text-indent: 10px;
   z-index: 10;
   color: #fff;
@@ -243,22 +244,30 @@ body {
   font-size: 12px;
 }
 /* line 172, ../sass/index.scss */
-.item-wrap-b .item-wrap-bright > div #iwb-d, .item-wrap-b .item-wrap-bright > div #iwb-e, .item-wrap-b .item-wrap-bright > div #iwb-f, .item-wrap-b .item-wrap-bright > div #iwb-g {
-  height: 220px;
+.item-wrap-b .item-wrap-bright > div #iwb-d, .item-wrap-b .item-wrap-bright > div #iwb-f, .item-wrap-b .item-wrap-bright > div #iwb-g {
+  height: 235px;
   width: 300px;
   margin: 0 auto;
 }
-/* line 180, ../sass/index.scss */
+/* line 177, ../sass/index.scss */
+.item-wrap-b .item-wrap-bright > div #iwb-g {
+  height: 130px;
+}
+/* line 184, ../sass/index.scss */
+.item-wrap-b .iwb-g {
+  display: none;
+}
+/* line 186, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle {
   flex: 1;
   margin: 0 10px;
-  height: calc(100% - 138px);
+  height: 100%;
   background: url(../timg.gif) no-repeat center center #1a1a1b;
   background-size: contain;
   position: relative;
   border: 1px solid rgba(27, 209, 187, 0.3);
 }
-/* line 193, ../sass/index.scss */
+/* line 199, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .title {
   color: #fff;
   line-height: 30px;
@@ -267,21 +276,22 @@ body {
   width: 100%;
   height: 30px;
   line-height: 30px;
-  top: 20px;
-  text-align: center;
+  top: 40px;
+  text-indent: 30px;
+  font-size: 24px;
 }
-/* line 204, ../sass/index.scss */
+/* line 212, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum {
   position: absolute;
   width: 110px;
   height: 100px;
   right: 10px;
-  top: 350px;
+  top: 250px;
   color: #fff;
   font-size: 12px;
   text-align: center;
 }
-/* line 214, ../sass/index.scss */
+/* line 222, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span {
   position: relative;
   width: 100%;
@@ -294,7 +304,7 @@ body {
   margin-top: 10px;
   color: #ed7d31;
 }
-/* line 225, ../sass/index.scss */
+/* line 233, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span::before {
   position: absolute;
   width: 10px;
@@ -305,7 +315,7 @@ body {
   top: 0;
   left: 0;
 }
-/* line 235, ../sass/index.scss */
+/* line 243, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span::after {
   position: absolute;
   width: 10px;
@@ -317,7 +327,7 @@ body {
   right: 0;
 }
 
-/* line 253, ../sass/index.scss */
+/* line 261, ../sass/index.scss */
 .totalnum-a i, .totalnum-b i, .totalnum-c i, .totalnum-d i {
   width: 33px;
   height: 47px;
@@ -327,7 +337,7 @@ body {
   margin: 0 2px;
 }
 
-/* line 264, ../sass/index.scss */
+/* line 272, ../sass/index.scss */
 .iwb-a::before, .iwb-b::before, .iwb-c::before, .iwb-d::before, .iwb-g::before, .iwb-f::before {
   width: 12px;
   height: 12px;
@@ -340,7 +350,7 @@ body {
   border-left: 1px solid;
 }
 
-/* line 275, ../sass/index.scss */
+/* line 283, ../sass/index.scss */
 .iwb-a::after, .iwb-b::after, .iwb-c::after, .iwb-d::after, .iwb-g::after, .iwb-f::after {
   width: 12px;
   height: 12px;
@@ -353,32 +363,32 @@ body {
   border-bottom: 1px solid;
 }
 
-/* line 290, ../sass/index.scss */
+/* line 298, ../sass/index.scss */
 .iwb-a::before, .iwb-a::after {
   border-color: #FF6103;
 }
 
-/* line 291, ../sass/index.scss */
+/* line 299, ../sass/index.scss */
 .iwb-b::before, .iwb-b::after {
   border-color: #2fe71f;
 }
 
-/* line 292, ../sass/index.scss */
+/* line 300, ../sass/index.scss */
 .iwb-c::before, .iwb-c::after {
   border-color: #00FFFF;
 }
 
-/* line 293, ../sass/index.scss */
+/* line 301, ../sass/index.scss */
 .iwb-d::before, .iwb-d::after {
   border-color: #4169E1;
 }
 
-/* line 294, ../sass/index.scss */
+/* line 302, ../sass/index.scss */
 .iwb-g::before, .iwb-g::after {
   border-color: #FF1493;
 }
 
-/* line 295, ../sass/index.scss */
+/* line 303, ../sass/index.scss */
 .iwb-f::before, .iwb-f::after {
   border-color: #FF00FF;
 }
