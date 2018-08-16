@@ -98,28 +98,27 @@ html, body {
 
 /* line 31, ../sass/index.scss */
 body {
-  /* background: #070725; */
-  background: #020107;
+  background: #070725;
   width: 1280px;
   margin: 0 auto;
 }
 
-/* line 39, ../sass/index.scss */
+/* line 42, ../sass/index.scss */
 .header {
   height: 22px;
   padding: 10px;
   text-align: center;
 }
-/* line 43, ../sass/index.scss */
+/* line 46, ../sass/index.scss */
 .header span {
   color: #fff;
-  font-size: 24px;
+  font-size: 30px;
   padding: 0 10px;
   line-height: 30px;
   text-shadow: 2px 2px 5px #FFFFFF, 2px 2px 5px #333333;
 }
 
-/* line 52, ../sass/index.scss */
+/* line 55, ../sass/index.scss */
 .main {
   display: flex;
   width: 100%;
@@ -127,7 +126,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
 }
-/* line 59, ../sass/index.scss */
+/* line 62, ../sass/index.scss */
 .main .item-wrap-a {
   display: flex;
   width: 100%;
@@ -135,27 +134,27 @@ body {
   flex-wrap: nowrap;
   justify-content: space-around;
 }
-/* line 66, ../sass/index.scss */
+/* line 69, ../sass/index.scss */
 .main .item-wrap-a > div {
   background: #06113f;
   width: 300px;
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
 }
-/* line 73, ../sass/index.scss */
+/* line 76, ../sass/index.scss */
 .main .item-wrap-a > div h5 {
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   text-align: center;
   line-height: 30px;
 }
-/* line 79, ../sass/index.scss */
+/* line 82, ../sass/index.scss */
 .main .item-wrap-a > div .totalnum {
   text-align: center;
   padding: 10px 0 0 0;
 }
-/* line 82, ../sass/index.scss */
+/* line 85, ../sass/index.scss */
 .main .item-wrap-a > div .totalnum span {
   display: inline-block;
   padding: 4px 6px;
@@ -164,26 +163,24 @@ body {
   background: #0f1b4e;
 }
 
-/* line 95, ../sass/index.scss */
+/* line 98, ../sass/index.scss */
 .item-wrap-b {
   padding: 6px;
   width: 100%;
   display: flex;
   height: 100%;
 }
-/* line 100, ../sass/index.scss */
+/* line 103, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft {
   width: 320px;
 }
-/* line 102, ../sass/index.scss */
+/* line 105, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div {
   margin-bottom: 10px;
-  background: #06113f;
   position: relative;
 }
-/* line 107, ../sass/index.scss */
+/* line 110, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div .title {
-  position: absolute;
   width: 100%;
   height: 40px;
   line-height: 40px;
@@ -192,7 +189,7 @@ body {
   color: #fff;
   font-size: 16px;
 }
-/* line 117, ../sass/index.scss */
+/* line 120, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div .footer {
   height: 30px;
   line-height: 30px;
@@ -201,57 +198,42 @@ body {
   color: #fff;
   font-size: 12px;
 }
-/* line 125, ../sass/index.scss */
+/* line 128, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div #iwb-b, .item-wrap-b .item-wrap-bleft > div #iwb-c {
-  height: 200px;
+  height: 180px;
   width: 300px;
   margin: 0 auto;
-  padding-top: 20px;
 }
-/* line 131, ../sass/index.scss */
+/* line 134, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft > div #iwb-a {
   height: 150px;
   width: 300px;
   margin: 0 auto;
 }
-/* line 138, ../sass/index.scss */
+/* line 141, ../sass/index.scss */
 .item-wrap-b .item-wrap-bleft .iwb-a {
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
+  position: relative;
 }
-/* line 143, ../sass/index.scss */
+/* line 147, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright {
   width: 340px;
 }
-/* line 145, ../sass/index.scss */
+/* line 149, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div {
   margin-bottom: 10px;
-  /* background: #06113f; */
-  background: rgba(68,72,86,.5);
   position: relative;
 }
-<<<<<<< HEAD
-/* line 150, ../sass/index.scss */
-=======
-.border-lt{
-  position:absolute;top:0;left:0;width:20px;height:20px;border-top:solid 1px #54dcda;border-left:solid 1px #54dcda;
-}
-.border-br{
-  position:absolute;bottom:0;right:0;width:20px;height:20px;border-bottom:solid 1px #54dcda;border-right:solid 1px #54dcda;
-}
-/* line 149, ../sass/index.scss */
->>>>>>> c722ffaea69482a977cc07575bd9781ca3b61215
+/* line 154, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div .title {
-  position: absolute;
   width: 100%;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   text-indent: 10px;
   z-index: 10;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
 }
-/* line 160, ../sass/index.scss */
+/* line 164, ../sass/index.scss */
 .item-wrap-b .item-wrap-bright > div .footer {
   height: 30px;
   line-height: 30px;
@@ -260,23 +242,23 @@ body {
   color: #fff;
   font-size: 12px;
 }
-/* line 168, ../sass/index.scss */
-.item-wrap-b .item-wrap-bright > div #iwb-d, .item-wrap-b .item-wrap-bright > div #iwb-e, .item-wrap-b .item-wrap-bright > div #iwb-f {
+/* line 172, ../sass/index.scss */
+.item-wrap-b .item-wrap-bright > div #iwb-d, .item-wrap-b .item-wrap-bright > div #iwb-e, .item-wrap-b .item-wrap-bright > div #iwb-f, .item-wrap-b .item-wrap-bright > div #iwb-g {
   height: 220px;
-  width: 280px;
+  width: 300px;
   margin: 0 auto;
 }
-/* line 176, ../sass/index.scss */
+/* line 180, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle {
   flex: 1;
   margin: 0 10px;
   height: calc(100% - 138px);
-  background: url(../mapbg.png) no-repeat center center #011427;
+  background: url(../timg.gif) no-repeat center center #1a1a1b;
   background-size: contain;
   position: relative;
   border: 1px solid rgba(27, 209, 187, 0.3);
 }
-/* line 185, ../sass/index.scss */
+/* line 193, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .title {
   color: #fff;
   line-height: 30px;
@@ -285,21 +267,21 @@ body {
   width: 100%;
   height: 30px;
   line-height: 30px;
-  left: 40px;
   top: 20px;
+  text-align: center;
 }
-/* line 196, ../sass/index.scss */
+/* line 204, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum {
   position: absolute;
-  width: 100px;
+  width: 110px;
   height: 100px;
-  right: 20px;
+  right: 10px;
   top: 350px;
   color: #fff;
   font-size: 12px;
   text-align: center;
 }
-/* line 206, ../sass/index.scss */
+/* line 214, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span {
   position: relative;
   width: 100%;
@@ -312,7 +294,7 @@ body {
   margin-top: 10px;
   color: #ed7d31;
 }
-/* line 217, ../sass/index.scss */
+/* line 225, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span::before {
   position: absolute;
   width: 10px;
@@ -323,7 +305,7 @@ body {
   top: 0;
   left: 0;
 }
-/* line 227, ../sass/index.scss */
+/* line 235, ../sass/index.scss */
 .item-wrap-b .item-wrap-bmiddle .showDanum span::after {
   position: absolute;
   width: 10px;
@@ -335,12 +317,68 @@ body {
   right: 0;
 }
 
-/* line 245, ../sass/index.scss */
+/* line 253, ../sass/index.scss */
 .totalnum-a i, .totalnum-b i, .totalnum-c i, .totalnum-d i {
   width: 33px;
   height: 47px;
   display: inline-block;
   background: url(../number1.png) no-repeat;
   background-position: 0 0;
-  margin: 0 5px;
+  margin: 0 2px;
+}
+
+/* line 264, ../sass/index.scss */
+.iwb-a::before, .iwb-b::before, .iwb-c::before, .iwb-d::before, .iwb-g::before, .iwb-f::before {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  content: '';
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+/* line 275, ../sass/index.scss */
+.iwb-a::after, .iwb-b::after, .iwb-c::after, .iwb-d::after, .iwb-g::after, .iwb-f::after {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 12;
+  content: '';
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+/* line 290, ../sass/index.scss */
+.iwb-a::before, .iwb-a::after {
+  border-color: #FF6103;
+}
+
+/* line 291, ../sass/index.scss */
+.iwb-b::before, .iwb-b::after {
+  border-color: #2fe71f;
+}
+
+/* line 292, ../sass/index.scss */
+.iwb-c::before, .iwb-c::after {
+  border-color: #00FFFF;
+}
+
+/* line 293, ../sass/index.scss */
+.iwb-d::before, .iwb-d::after {
+  border-color: #4169E1;
+}
+
+/* line 294, ../sass/index.scss */
+.iwb-g::before, .iwb-g::after {
+  border-color: #FF1493;
+}
+
+/* line 295, ../sass/index.scss */
+.iwb-f::before, .iwb-f::after {
+  border-color: #FF00FF;
 }

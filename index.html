@@ -23,6 +23,15 @@
     </div>
     <div class="main">
       <div class="item-wrap-a">
+
+        <div class="iwa-d">
+          <h5>注册用户数</h5>
+          <div class="totalnum totalnum-d">
+
+          </div>
+        </div>
+
+
         <div class="iwa-a">
           <h5>在线用户数</h5>
           <div class="totalnum totalnum-a">
@@ -40,11 +49,11 @@
           <div class="totalnum totalnum-c">
           </div>
         </div>
-        <div class="iwa-d">
+        <!-- <div class="iwa-d">
           <h5>当日实名认证用户数</h5>
           <div class="totalnum totalnum-d">
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="item-wrap-b">
         <div class="item-wrap-bleft">
@@ -56,7 +65,7 @@
             <div id="iwb-b">
             </div>
             <div class="footer">
-              当月累计放款金额:
+              8月18号本月已发放:
               <span>19.98 亿元</span>
             </div>
           </div>
@@ -65,7 +74,7 @@
             <div id="iwb-c">
             </div>
             <div class="footer">
-              当月累计放款金额:
+              8月当前已发放:
               <span>414.48 万元</span>
             </div>
           </div>
@@ -74,9 +83,9 @@
 
         </div>
         <div class="item-wrap-bmiddle">
-          <div class="title">绑定大卡车辆数</div>
+          <div class="title">全国货运车辆热力分布</div>
           <div class="showDanum">
-            绑定大卡车辆数
+            货运平台接入车辆数
             <span class="carCount"> 5,480,000</span>
           </div>
         </div>
@@ -84,27 +93,39 @@
           <div class="iwb-d" style="position:realtive">
               <span class="border-lt"></span>
               <span class="border-br"></span>
-            <div class="title">ETC通行费统计</div>
+            <div class="title">ETC重高</div>
             <div id="iwb-d" style="background:#fff;"></div>
             <div class="footer">
-              当月累计发放金额:
+              8月18号本月已发放:
               <span id="ff_mount"></span>
             </div>
           </div>
-          <div class="iwb-e">
+          <!-- <div class="iwb-e">
             <div class="title">ETC发卡量及通行笔数统计</div>
             <div id="iwb-e"></div>
             <div class="footer">
               当月累计通行笔数:
               <span id="tx_count">414</span>
             </div>
+          </div> -->
+
+          <div class="iwb-g">
+            <div class="title">ETC山高</div>
+            <div id="iwb-g">
+            </div>
+            <!-- <div class="footer">
+              当月累计放款金额:
+              <span>406 万元</span>
+            </div> -->
           </div>
+
+
           <div class="iwb-f">
             <div class="title">货车分期</div>
             <div id="iwb-f">
             </div>
             <div class="footer">
-              当月累计放款金额:
+              8月18号本月已发放:
               <span>406 万元</span>
             </div>
           </div>
@@ -119,6 +140,7 @@
         var myChartB = echarts.init(document.getElementById('iwb-b'));
         var myChartC = echarts.init(document.getElementById('iwb-c'));
         var myChartF = echarts.init(document.getElementById('iwb-f'));
+        var myChartG = echarts.init(document.getElementById('iwb-g'));
 
 
         //联名卡
@@ -143,6 +165,13 @@
         var carCtime = ['1月', '2月', '3月', '4月', '5月', '6月', '7月']; //时间
 
 
+        //山高ETC
+
+        var sgAcurrentgrandtotal = [11742, 6955, 13233, 14947, 15136, 14443, 17813];
+        var sgBgrandtotalaccum = [3731, 3858, 9106, 22776, 27100, 27226, 32660]; //时间
+        var sgCtime = ['1月', '2月', '3月', '4月', '5月', '6月', '7月']; //时间
+
+
 
 
         //联名卡配置
@@ -154,6 +183,13 @@
           ],
           title: {
             top: '0'
+          },
+          grid: {
+            left: '0%',
+            right: '3%',
+            top: '22%',
+            bottom: '20%',
+            containLabel: true
           },
           tooltip: {
             trigger: 'axis',
@@ -229,15 +265,17 @@
                 color: '#fff'
               },
               axisLine: {
+                show: false,
                 lineStyle: {
-                  color: '#fff',
+                  color: '#2fe71f',
+                  type: 'solid'
                 }
               },
               splitLine: {
-                show: false,
+                show: true,
                 lineStyle: {
-                  color: '#483d8b',
-                  type: 'dashed',
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
                   width: 1
                 }
               },
@@ -255,10 +293,20 @@
                 color: '#fff'
               },
               axisLine: {
+                show: false,
                 lineStyle: {
-                  color: '#fff',
+                  color: '#f00',
+                  type: 'solid'
                 }
-              }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
+                }
+              },
             }
           ],
           series: [{
@@ -288,8 +336,7 @@
 
         //好运条配置
         optionC = {
-          color: ['#2fe71f', '#fffe20', '#f00', '#FF6103', '#A020F0', '#00FFFF', '#ca8622', '#bda29a', '#6e7074','#546570', '#c4ccd3'
-          ],
+          color: ['#2fe71f', '#00FFFF'],
           title: {
             top: '0'
           },
@@ -301,6 +348,13 @@
                 color: '#999'
               }
             }
+          },
+          grid: {
+            left: '3%',
+            right: '0%',
+            top: '16%',
+            bottom: '20%',
+            containLabel: true
           },
           axisPointer:{
             label: {
@@ -338,7 +392,20 @@
             data: hytCtime,
             axisPointer: {
               type: 'shadow'
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+           splitLine : {
+            show:false,
+            lineStyle: {
+                color: '#483d8b',
+                type: 'dashed',
+                width: 1
             }
+          }
           }],
           yAxis: [{
               type: 'value',
@@ -353,16 +420,18 @@
                 color: '#fff'
               },
               axisLine: {
+                show: false,
                 lineStyle: {
-                  color: '#fff',
+                  color: '#2fe71f',
+                  type: 'solid'
                 }
               },
-              splitLine : {
-                show:false,
+              splitLine: {
+                show: true,
                 lineStyle: {
-                    color: '#483d8b',
-                    type: 'dashed',
-                    width: 1
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
                 }
               },
             },
@@ -382,10 +451,20 @@
                 color: '#fff'
               },
               axisLine: {
+                show: false,
                 lineStyle: {
-                  color: '#fff',
+                  color: '#00FFFF',
+                  type: 'solid'
                 }
-              }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
+                }
+              },
             }
           ],
           series: [{
@@ -408,10 +487,7 @@
         //卡车分期配置
         optionF = {
 
-          backgroundColor: '#fff',
-          color: ['#2fe71f', '#fffe20', '#f00', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074',
-            '#546570', '#c4ccd3'
-          ],
+          color: ['#FF00FF', '#fffe20', '#f00'],
           title: {
             top: '0'
           },
@@ -428,6 +504,13 @@
             label: {
               backgroundColor:'transparent'
             }
+          },
+          grid: {
+            left: '0%',
+            right: '0%',
+            top: '22%',
+            bottom: '16%',
+            containLabel: true
           },
           toolbox: {
             show: false,
@@ -491,18 +574,20 @@
                 color: '#fff'
               },
               axisLine: {
+                show: false,
                 lineStyle: {
-                  color: '#fff',
+                  color: '#FF00FF',
+                  type: 'solid'
                 }
               },
-              splitLine : {
-                show:false,
+              splitLine: {
+                show: true,
                 lineStyle: {
-                    color: '#483d8b',
-                    type: 'dashed',
-                    width: 1
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
                 }
-              },
+              }
             },
             {
               type: 'value',
@@ -517,8 +602,18 @@
                 color: '#fff'
               },
               axisLine: {
+                show: false,
                 lineStyle: {
-                  color: '#fff',
+                  color: '#fffe20',
+                  type: 'solid'
+                }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
                 }
               }
             }
@@ -540,11 +635,167 @@
         };
 
 
+        //山高ETC
+        optionG = {
+
+          color: ['#7FFFD4', '#FF1493', '#00FF7F'],
+          title: {
+            top: '0'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'cross',
+              crossStyle: {
+                color: '#999'
+              }
+            }
+          },
+          axisPointer:{
+            label: {
+              backgroundColor:'transparent'
+            }
+          },
+          grid: {
+            left: '0%',
+            right: '0%',
+            top: '22%',
+            bottom: '16%',
+            containLabel: true
+          },
+          toolbox: {
+            show: false,
+            feature: {
+              dataView: {
+                show: true,
+                readOnly: false
+              },
+              magicType: {
+                show: true,
+                type: ['line', 'bar']
+              },
+              restore: {
+                show: true
+              },
+              saveAsImage: {
+                show: true
+              }
+            }
+          },
+          legend: {
+            data: ['通行费用', '通行笔数'],
+            bottom: '10',
+            textStyle: {
+              color: '#fff'
+            }
+          },
+          xAxis: [{
+            type: 'category',
+            data: sgCtime,
+            axisPointer: {
+              type: 'shadow'
+            },
+             axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+           splitLine : {
+            show:false,
+            lineStyle: {
+                color: '#483d8b',
+                type: 'dashed',
+                width: 1
+            }
+          }
+          }],
+          yAxis: [{
+              type: 'value',
+              name: '金额(万元)',
+              min: 6000,
+              max: 25000,
+              offset: 0,
+              axisLabel: {
+                formatter: '{value}'
+              },
+              axisLabel: {
+                formatter: '{value}'
+              },
+              nameTextStyle: {
+                color: '#fff'
+              },
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: '#FF1493',
+                  type: 'solid'
+                }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
+                }
+              }
+            },
+            {
+              type: 'value',
+              name: '笔数(笔)',
+              min: 3000,
+              max: 50000,
+              offset: 0,
+              axisLabel: {
+                formatter: '{value}'
+              },
+              nameTextStyle: {
+                color: '#fff'
+              },
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: '#7FFFD4',
+                  type: 'solid'
+                }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
+                }
+              }
+            }
+          ],
+          series: [{
+              name: '通行费用',
+              type: 'bar',
+              // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
+              data: sgAcurrentgrandtotal
+            },
+            {
+              name: '通行笔数',
+              type: 'line',
+              yAxisIndex: 1,
+              // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
+              data: sgBgrandtotalaccum
+            }
+          ]
+        };
+
+
+
+
+
+
         window.onload = function () {
           // myChartB.setOption(optionB);
           myChartB.setOption(optionB);
           myChartC.setOption(optionC);
           myChartF.setOption(optionF);
+          myChartG.setOption(optionG);
         };
       </script>
 
@@ -601,6 +852,10 @@
           var $ele = $(ele);
           var it = $ele.find('i');
           var len = String(n).length;
+          // if(len<8){
+          //   var m = 8 - n;
+          //   n = m
+          // }
           for (var i = 0; i < len; i++) {
             if (it.length <= i) {
               $ele.append("<i></i>");
@@ -627,7 +882,7 @@
               show_num1(ccJson.onlineuser, '.totalnum-a');
               show_num1(ccJson.authenAll, '.totalnum-b');
               show_num1(ccJson.registernum, '.totalnum-c');
-              show_num1(ccJson.authen, '.totalnum-d');
+              show_num1((parseInt(ccJson.registernum) + 3592433), '.totalnum-d');
 
               var pieData = [{
                   name: '车主',
@@ -741,11 +996,11 @@
               var ff_mount = Data.listTollApplyAmount.joinKey('sums');
               $("#ff_mount").html((ff_mount[ff_mount.length - 1] / 10000).toFixed(2) + '万元');
               var optionD = {
-                 color: ['#2fe71f', '#fffe20', '#f00', '#FF6103', '#A020F0', '#00FFFF', '#ca8622', '#bda29a', '#6e7074','#546570', '#c4ccd3'
-          ],
-          title: {
-            top: '0'
-          },
+                 color: ['#fffe20', '#4169E1', '#f00'],
+                  title: {
+                    top: '0'
+                  },
+          // color: ['#FF00FF','#18fc70','#ff08fa'],
           tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -753,6 +1008,10 @@
               crossStyle: {
                 color: '#999'
               }
+            },
+            formatter: function (p) {
+              console.log(p);
+              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万'
             }
           },
           axisPointer:{
@@ -777,12 +1036,12 @@
               saveAsImage: {
                 show: true
               }
-            }
+            },
           },
           legend: {
             // x: 'center',
             // y: 'bottom',
-            data: ['累计发放', '累计还款'],
+            data: ['累计发放', '累计还款', '通行笔数'],
             bottom: '10',
             textStyle: {
               color: '#fff'
@@ -790,122 +1049,204 @@
           },
           grid: {
             left: '0%',
-            right: '3%',
+            right: '6%',
+            top: '16%',
             bottom: '16%',
             containLabel: true
           },
-          xAxis: {
+          xAxis: [{
             type: 'category',
-            boundaryGap: false,
+            // boundaryGap: false,
             data: Data.listTollApplyAmount.joinKey('time').removeAt(Data.listTollApplyAmount.joinKey('time').length-1,1),
             axisLabel: {
               formatter: function (p) {
                 return parseInt(p.split('-')[1]) + '月'
               }
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+            splitLine: {
+              show: false,
+              lineStyle: {
+                color: '#483d8b',
+                type: 'dashed',
+                width: 1
+              }
+            }
+          }],
+          yAxis: [{
+            type: 'value',
+            name:'金额（万元）',
+            nameTextStyle:{
+              color:'#fffe20',
+            },
+            axisLabel: {
+              formatter: function (p) {
+                return p / 10000
+              }
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#fffe20',
+                type: 'solid'
+              }
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(255,255,255,.05)',
+                type: 'solid',
+                width: 1
+              }
             }
           },
+          {
+            type: 'value',
+            name:'通行笔数（万笔）',
+            nameTextStyle:{
+              color:'#fff',
+            },
+            axisLabel: {
+              formatter: function (p) {
+                return p / 10000
+              }
+            },
+            nameTextStyle: {
+                color: '#fff'
+              },
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: '#4169E1',
+                  type: 'solid'
+                }
+              },
+              splitLine: {
+                show: true,
+                lineStyle: {
+                  color: 'rgba(255,255,255,.05)',
+                  type: 'solid',
+                  width: 1
+                }
+              },
+          }
+          ],
+          series: [{
+              name: '累计发放',
+              type: 'bar',
+              data: Data.listTollApplyAmount.joinKey('sums').removeAt(Data.listTollApplyAmount.joinKey('sums').length-1)
+            },
+            {
+              name: '累计还款',
+              type: 'bar',
+              data: Data.listTollRepaymentAmount.joinKey('sums').removeAt(Data.listTollRepaymentAmount.joinKey('sums').length-1)
+            },
+            {
+              name: '通行笔数',
+              type: 'line',
+              yAxisIndex: 1,
+              data: Data.listTollCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
+                1)
+            },
+          ]
+        };
+        drawChart('iwb-d', optionD);
 
-                yAxis: {
-                  type: 'value',
-                  name:'金额（万元）',
-                  nameTextStyle:{
-                    color:'#fff',
-                  },
-                  axisLabel: {
-                    color:'#fff',
-                    formatter: function (p) {
-                      return p / 10000
-                    }
-                  },
-                  splitLine:{
-                    lineStyle:{
-                      color:'#45465b',
-                      type:'dashed'
-                    }
-                  },
-                  axisTick:{
-                    show:false,
-                  },
-                  axisLine:{
-                    show:false
-                  }
-                },
-                series: [{
-                    name: '累计发放',
-                    type: 'line',
-                    data: Data.listTollApplyAmount.joinKey('sums').removeAt(Data.listTollApplyAmount.joinKey('sums').length-1)
-                  },
-                  {
-                    name: '累计还款',
-                    type: 'line',
-                    data: Data.listTollRepaymentAmount.joinKey('sums').removeAt(Data.listTollRepaymentAmount.joinKey('sums').length-1)
-                  }
-                ]
-              };
-              drawChart('iwb-d', optionD);
-              var tx_Data = Data.listTollCount.joinKey('counts');
-              $("#tx_count").html(tx_Data[tx_Data.length - 1]);
-              var e_timeData = Data.listCardCount.joinKey('time');
-              var optionE = {
-                backgroundColor: '#fff',
-                xAxis: {
-                  type: 'category',
-                  data: e_timeData.removeAt(e_timeData.length - 1),
-                  axisLabel: {
-                    formatter: function (p) {
-                      return parseInt(p.split('-')[1]) + '月'
-                    }
-                  }
-                },
-                tooltip: {
-                  trigger: 'axis',
-                  formatter: function (p) {
-                    return p[0].name + '<br/>' + 'ETC发卡量：' + p[0].value + '<br/>通行笔数：' + p[1].value;
-                  }
-                },
-                grid: {
-                  left: '10%',
-                  right: '10%',
-                },
-                yAxis: [{
-                    type: 'value',
-                    name: '通行数(万)',
-                    min: 0,
-                    splitLine: {
-                      show: false,
-                    },
-                    axisLabel: {
-                      formatter: function (p) {
-                        return p / 10000
-                      }
-                    },
-                  },
-                  {
-                    type: 'value',
-                    name: '发卡量(千)',
-                    axisLabel: {
-                      formatter: function (p) {
-                        return p / 1000
-                      }
-                    },
 
-                    min: 0
-                  }
-                ],
-                series: [{
-                    yAxisIndex: 1,
-                    data: Data.listCardCount.joinKey('counts').removeAt(Data.listCardCount.joinKey('counts').length -
-                      1),
-                    type: 'bar'
-                  },
-                  {
-                    data: Data.listTollCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
-                      1),
-                    type: 'bar'
-                  }
-                ]
-              };
-              drawChart('iwb-e', optionE);
+        var tx_Data = Data.listTollCount.joinKey('counts');
+        $("#tx_count").html(tx_Data[tx_Data.length - 1]);
+        var e_timeData = Data.listCardCount.joinKey('time');
+        var optionE = {
+          color: ['#f03530','#11bcf9'],
+          xAxis: {
+            type: 'category',
+            data: e_timeData.removeAt(e_timeData.length - 1),
+            axisLabel: {
+              formatter: function (p) {
+                return parseInt(p.split('-')[1]) + '月'
+              }
+            },
+            axisPointer: {
+              type: 'shadow'
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
+          },
+          legend: {
+            show: true,
+            data: ['通行数(万)', '发卡量(张)'],
+            bottom: '10',
+            textStyle: {
+              color: '#fff'
+            }
+          },
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (p) {
+              return p[0].name + '<br/>' + 'ETC发卡量：' + p[0].value + '<br/>通行笔数：' + p[1].value;
+            }
+          },
+          grid: {
+            left: '10%',
+            right: '15%',
+            bottom: '16%',
+            top:'15%'
+          },
+          yAxis: [{
+              type: 'value',
+              name: '通行数(万)',
+              min: 0,
+              splitLine: {
+                show: false,
+              },
+              axisLabel: {
+                formatter: function (p) {
+                  return p / 10000
+                }
+              },
+              axisLine: {
+                lineStyle: {
+                  color: '#fff'
+                }
+              }
+            },
+            {
+              type: 'value',
+              name: '发卡量(张)',
+              min: 0,
+              axisLabel: {
+                formatter: function (p) {
+                  return p
+                }
+              },
+              axisLine: {
+                lineStyle: {
+                  color: '#fff'
+                }
+              }
+            }
+          ],
+          series: [{
+              yAxisIndex: 1,
+              data: Data.listCardCount.joinKey('counts').removeAt(Data.listCardCount.joinKey('counts').length -
+                1),
+              type: 'bar'
+            },
+            {
+              data: Data.listTollCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
+                1),
+              type: 'line',
+            }
+          ]
+        };
+        // drawChart('iwb-e', optionE);
               /* etcAlistTollAmount.splice(0,etcAlistTollAmount.length);
               etcDtime.splice(0,etcDtime.length);
               etcBlistTollCount.splice(0,etcBlistTollCount.length);
