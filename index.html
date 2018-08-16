@@ -149,7 +149,7 @@
 
         //好运条
 
-        var hytAcurrentgrandtotal = [87.75, 93.19, 102.89, 112.32, 121.92, 131.09, 140.78]; ////累计放款金额 (百万)
+        var hytAcurrentgrandtotal = [8775, 9319, 10289, 11232, 12192, 13109, 14078]; ////累计放款金额 (百万)
         // var hytBgrandtotalaccum = [3.06,3.24,3.56,3.87,4.18,4.47,4.78,4.91];    //累计放款笔数
         var hytBgrandtotalaccum = [1779, 3166, 3087, 3113, 2957, 3092, 1299]; //当月放款笔数
         var hytCtime = ['1月', '2月', '3月', '4月', '5月', '6月', '7月']; //时间
@@ -183,8 +183,8 @@
           grid: {
             left: '0%',
             right: '3%',
-            top: '10%',
-            bottom: '14%',
+            top: '20%',
+            bottom: '24%',
             containLabel: true
           },
           tooltip: {
@@ -245,8 +245,7 @@
                 type: 'dashed',
                 width: 1
               }
-            },
-
+            }
           },
           yAxis: [{
               type: 'value',
@@ -279,7 +278,7 @@
             {
               type: 'value',
               name: '发卡量(万张)',
-              min: 100,
+              min: 0,
               max: 300,
               offset: 0,
               axisLabel: {
@@ -407,9 +406,9 @@
           }],
           yAxis: [{
               type: 'value',
-              name: '金额(百万元)',
+              name: '金额(万元)',
               min: 0,
-              max: 250,
+              max: 20000,
               offset: 0,
               axisLabel: {
                 formatter: '{value}'
@@ -456,7 +455,7 @@
                 }
               },
               splitLine: {
-                show: true,
+                show: false,
                 lineStyle: {
                   color: 'rgba(255,255,255,.05)',
                   type: 'solid',
@@ -467,7 +466,7 @@
           ],
           series: [{
               name: '放款金额',
-              type: 'bar',
+              type: 'line',
               barWidth: '6',
               // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
               data: hytAcurrentgrandtotal
@@ -593,7 +592,7 @@
               type: 'value',
               name: '笔数(笔)',
               min: 0,
-              max: 300,
+              max: 180,
               offset: 0,
               axisLabel: {
                 formatter: '{value}'
@@ -609,7 +608,7 @@
                 }
               },
               splitLine: {
-                show: true,
+                show: false,
                 lineStyle: {
                   color: 'rgba(255,255,255,.05)',
                   type: 'solid',
@@ -620,14 +619,15 @@
           ],
           series: [{
               name: '放款金额',
-              type: 'bar',
+              type: 'line',
               barWidth: '6',
               // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
               data: carAcurrentgrandtotal
             },
             {
               name: '放款笔数',
-              type: 'line',
+              type: 'bar',
+              barWidth: '6',
               yAxisIndex: 1,
               // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
               data: carBgrandtotalaccum
@@ -1011,7 +1011,7 @@
             },
             formatter: function (p) {
               console.log(p);
-              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万' + '<br/>' + p[3].seriesName + ':' + (p[3].value)*1000
+              return p[0].name + '<br/>' + p[0].seriesName + ':' + (p[0].value/10000).toFixed(2) + '万元' +'<br/>' + p[1].seriesName + ':' + (p[1].value/10000).toFixed(2) + '万元' + '<br/>' + p[2].seriesName + ':' + (p[2].value/10000).toFixed(2) + '万' + '<br/>' + p[3].seriesName + ':' + p[3].value
             }
           },
           axisPointer:{
@@ -1137,28 +1137,30 @@
           ],
           series: [{
               name: '累计发放',
-              type: 'bar',
+              type: 'line',
               barWidth: '6',
               data: Data.listTollApplyAmount.joinKey('sums').removeAt(Data.listTollApplyAmount.joinKey('sums').length-1)
             },
             {
               name: '累计还款',
-              type: 'bar',
-              barWidth: '6',
+              type: 'line',
+
               data: Data.listTollRepaymentAmount.joinKey('sums').removeAt(Data.listTollRepaymentAmount.joinKey('sums').length-1)
             },
             {
               name: '通行笔数',
-              type: 'line',
+              type: 'bar',
+              barWidth: '6',
               yAxisIndex: 1,
               data: Data.listTollCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
                 1)
             },
             {
               name: '发卡量',
-              type: 'line',
+              type: 'bar',
+              barWidth: '6',
               yAxisIndex: 1,
-              data: Data.listCardCount.joinKey('counts').removeAt(Data.listTollCount.joinKey('counts').length -
+              data: Data.listCardCount.joinKey('counts').removeAt(Data.listCardCount.joinKey('counts').length -
                 1)
             },
           ]
